@@ -61,6 +61,7 @@ export function MonthlyDepositsChart({ data }: MonthlyDepositsChartProps) {
             data={displayed}
             margin={{ top: 28, right: 0, left: 0, bottom: 0 }}
             barCategoryGap="20%"
+            title="Monthly deposits chart"
           >
             <XAxis
               dataKey="label"

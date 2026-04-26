@@ -8,9 +8,9 @@
 /* ── Featured row: large card (65%) + tall card (35%) ── */
 .featuredRow {
   display: grid;
-  grid-template-columns: 1fr 418px;
+  grid-template-columns: 1fr minmax(220px, 418px);
   gap: var(--space-6);
-  min-height: 504px;
+  min-height: clamp(200px, 30vh, 504px);
 }
 
 .featuredCard {
@@ -26,23 +26,20 @@
 
 /* Remaining slot in featured column stays empty or filled by grid auto */
 .tallCard {
-  min-height: 504px;
+  min-height: clamp(200px, 30vh, 504px);
 }
 
 /* ── Subsequent rows ── */
 .row {
   display: grid;
-  grid-template-columns: 418px 1fr;
+  grid-template-columns: minmax(220px, 418px) 1fr;
   gap: var(--space-6);
-  min-height: 504px;
+  min-height: clamp(200px, 30vh, 504px);
 }
 
 .rowReverse {
-  grid-template-columns: 1fr 418px;
+  grid-template-columns: 1fr minmax(220px, 418px);
 }
-
-.rowReverse .tallCard { order: 2; }
-.rowReverse .wideBlock { order: 1; }
 
 .wideBlock {
   display: flex;
@@ -51,6 +48,9 @@
 }
 
 .wideCard { flex: 1; }
+
+.rowReverse .tallCard { order: 2; }
+.rowReverse .wideBlock { order: 1; }
 
 .halfRow {
   display: grid;

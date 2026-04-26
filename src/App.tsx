@@ -67,7 +67,7 @@ export default function App() {
 
       <Header onNewGoal={() => openModal('add-goal')} />
 
-      <main className={styles.main}>
+      <main className={styles.main} aria-hidden={modal.type !== null || undefined}>
         <div className={styles.container}>
           {activeGoal ? (
             <GoalDetail
@@ -85,14 +85,12 @@ export default function App() {
               <section className={styles.goalsSection} aria-label="Your goals">
                 <div className={styles.goalsHeader}>
                   <h2 className={styles.goalsTitle}>Your goals</h2>
-                  <nav aria-label="Filter and sort options">
-                    <GoalsControls
-                      filter={filter}
-                      sort={sort}
-                      onFilterChange={setFilter}
-                      onSortChange={setSort}
-                    />
-                  </nav>
+                  <GoalsControls
+                    filter={filter}
+                    sort={sort}
+                    onFilterChange={setFilter}
+                    onSortChange={setSort}
+                  />
                 </div>
                 <GoalGrid
                   goals={filteredGoals}
