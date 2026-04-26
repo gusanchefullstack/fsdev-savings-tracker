@@ -88,7 +88,7 @@ Users are able to:
 ### Links
 
 - **Solution URL:** [github.com/gusanchefullstack/fsdev-savings-tracker](https://github.com/gusanchefullstack/fsdev-savings-tracker)
-- **Live Site:** *(Deployed on Vercel — link added after deployment)*
+- **Live Site:** [fsdev-savings-tracker-dev.vercel.app](https://fsdev-savings-tracker-dev.vercel.app)
 
 ---
 
