@@ -1,8 +1,13 @@
 .panel {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr 304px 304px;
   gap: var(--space-6);
   width: 100%;
+}
+
+/* Transparent wrapper — children join parent grid on desktop/tablet */
+.statCards {
+  display: contents;
 }
 
 /* Total savings – orange gradient card */
@@ -29,8 +34,6 @@
   gap: var(--space-8);
   overflow: hidden;
   position: relative;
-  width: 304px;
-  flex-shrink: 0;
 }
 
 .label {
@@ -71,35 +74,29 @@
   pointer-events: none;
 }
 
-/* ── Responsive ── */
+/* ── Tablet ── */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .panel {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .totalValue,
+  .statValue {
+    font-size: 48px;
+  }
+}
+
+/* ── Mobile ── */
 @media (max-width: 767px) {
   .panel {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    gap: var(--space-4);
   }
 
-  .statCard {
-    width: auto;
-  }
-
-  /* Side-by-side for active/completed on mobile */
-  .statCard:nth-child(2),
-  .statCard:nth-child(3) {
-    display: flex;
-  }
-
-  .panel {
-    grid-template-columns: 1fr;
-  }
-
-  /* Make active goals and completed side by side */
-  .panel .statCard {
-    grid-column: 1;
-  }
-
-  .panel {
-    display: flex;
-    flex-direction: column;
+  /* Restore wrapper as a 2-col grid for side-by-side stat cards */
+  .statCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-4);
   }
 
@@ -107,47 +104,8 @@
     gap: var(--space-6);
   }
 
-  .statCard {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-4);
-  }
-
   .totalValue,
   .statValue {
     font-size: var(--text-preset-1-mobile-size);
   }
-
-  /* Side by side on mobile */
-  .panel > .statCard:nth-child(2),
-  .panel > .statCard:nth-child(3) {
-    flex: 1;
-  }
-
-  .panel::after {
-    display: none;
-  }
-}
-
-@media (max-width: 767px) {
-  .panel {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-  }
-
-  .statContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-4);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-  .panel {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .statCard { width: auto; }
-  .totalValue, .statValue { font-size: 48px; }
 }
