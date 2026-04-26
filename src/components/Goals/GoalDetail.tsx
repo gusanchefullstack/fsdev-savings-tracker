@@ -29,17 +29,17 @@ export function GoalDetail({ goal, onBack, onEdit, onDelete, onAddDeposit }: Goa
     <div className={styles.container}>
       {/* Back + actions */}
       <div className={styles.topBar}>
-        <button className={styles.backBtn} onClick={onBack} aria-label="Back to goals">
+        <button type="button" className={styles.backBtn} onClick={onBack} aria-label="Back to goals">
           <img src={chevronLeft} alt="" aria-hidden="true" width={20} height={20} />
           Back
         </button>
         <div className={styles.actions}>
-          <button className={styles.editBtn} onClick={() => onEdit(goal.id)}>Edit goal</button>
-          <button className={styles.deleteBtn} onClick={() => onDelete(goal.id)}>Delete</button>
+          <button type="button" className={styles.editBtn} onClick={() => onEdit(goal.id)}>Edit goal</button>
+          <button type="button" className={styles.deleteBtn} onClick={() => onDelete(goal.id)}>Delete</button>
         </div>
       </div>
 
-      <h1 className={styles.goalName}>{goal.name}</h1>
+      <h2 className={styles.goalName}>{goal.name}</h2>
 
       {/* Progress section */}
       {isCompleted ? (
@@ -83,6 +83,7 @@ export function GoalDetail({ goal, onBack, onEdit, onDelete, onAddDeposit }: Goa
       )}
 
       <button
+        type="button"
         className={styles.addDepositBtn}
         onClick={() => onAddDeposit(goal.id)}
         aria-label={`Add deposit to ${goal.name}`}

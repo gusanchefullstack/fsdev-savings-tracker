@@ -34,6 +34,7 @@
   letter-spacing: -0.3px;
   color: var(--neutral-0);
   white-space: nowrap;
+  margin: 0;
 }
 
 .newGoalBtn {

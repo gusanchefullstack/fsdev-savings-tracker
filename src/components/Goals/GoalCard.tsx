@@ -29,23 +29,24 @@ export function GoalCard({ goal, featured = false, onClick }: GoalCardProps) {
   return (
     <article className={cardClass}>
       <button
+        type="button"
         className={styles.cardBtn}
         onClick={() => onClick(goal.id)}
         aria-label={`View details for ${goal.name}, ${percentage}% saved`}
       >
-        <div className={styles.header}>
-          <h2 className={styles.name}>{goal.name}</h2>
+        <span className={styles.header}>
+          <span className={styles.name}>{goal.name}</span>
           {isCompleted && (
             <span className={styles.badge} aria-label="Goal complete">COMPLETE</span>
           )}
-        </div>
+        </span>
 
-        <div className={styles.body}>
-          <p className={`${styles.percentage} ${isCompleted ? styles.percentageGreen : isFeatured ? styles.percentageWhite : styles.percentageOrange}`}>
+        <span className={styles.body}>
+          <span className={`${styles.percentage} ${isCompleted ? styles.percentageGreen : isFeatured ? styles.percentageWhite : styles.percentageOrange}`}>
             {percentage}%
-          </p>
+          </span>
           <ProgressBar percentage={percentage} variant={progressVariant} />
-          <div className={styles.meta}>
+          <span className={styles.meta}>
             <span>{formatCurrency(saved)} of {formatCurrency(goal.target)}</span>
             {goal.deadline && (
               <>
@@ -53,8 +54,8 @@ export function GoalCard({ goal, featured = false, onClick }: GoalCardProps) {
                 <span>{formatDeadline(goal.deadline)}</span>
               </>
             )}
-          </div>
-        </div>
+          </span>
+        </span>
       </button>
     </article>
   );

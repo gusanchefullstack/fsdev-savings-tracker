@@ -14,9 +14,10 @@ export function Header({ onNewGoal }: HeaderProps) {
         <a href="/" className={styles.logo} aria-label="Savings Tracker home">
           <img src={logoSmall} alt="" aria-hidden="true" className={styles.logoSmall} width={40} height={40} />
           <img src={logoLarge} alt="" aria-hidden="true" className={styles.logoLarge} width={40} height={40} />
-          <span className={styles.logoText}>Savings Tracker</span>
+          <h1 className={styles.logoText}>Savings Tracker</h1>
         </a>
         <button
+          type="button"
           className={styles.newGoalBtn}
           onClick={onNewGoal}
           aria-label="Create new savings goal"

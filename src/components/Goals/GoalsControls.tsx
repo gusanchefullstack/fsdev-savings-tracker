@@ -63,6 +63,7 @@ function Dropdown<T extends string>({
   return (
     <div className={styles.dropdown} ref={ref}>
       <button
+        type="button"
         ref={btnRef}
         className={styles.dropdownBtn}
         onClick={() => setOpen((v) => !v)}
@@ -87,6 +88,7 @@ function Dropdown<T extends string>({
           {options.map((opt) => (
             <li key={opt.value} role="option" aria-selected={opt.value === value}>
               <button
+                type="button"
                 className={`${styles.menuItem} ${opt.value === value ? styles.active : ''}`}
                 onClick={() => { onChange(opt.value); setOpen(false); btnRef.current?.focus(); }}
               >

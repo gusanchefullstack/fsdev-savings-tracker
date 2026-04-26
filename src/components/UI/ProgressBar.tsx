@@ -9,7 +9,7 @@ export function ProgressBar({ percentage, variant = 'orange' }: ProgressBarProps
   const clamped = Math.min(Math.max(percentage, 0), 100);
 
   return (
-    <div
+    <span
       className={`${styles.track} ${styles[variant]}`}
       role="progressbar"
       aria-valuenow={clamped}
@@ -17,9 +17,9 @@ export function ProgressBar({ percentage, variant = 'orange' }: ProgressBarProps
       aria-valuemax={100}
       aria-label={`${clamped}% saved`}
     >
-      <div className={styles.fill} style={{ width: `${clamped}%` }}>
-        <div className={styles.segments} aria-hidden="true" />
-      </div>
-    </div>
+      <span className={styles.fill} style={{ width: `${clamped}%` }}>
+        <span className={styles.segments} aria-hidden="true" />
+      </span>
+    </span>
   );
 }

@@ -57,6 +57,7 @@ export function ModalBase({ title, onClose, children }: ModalBaseProps) {
           <h2 id="modal-title" className={styles.title}>{title}</h2>
           <button
             ref={closeBtnRef}
+            type="button"
             className={styles.closeBtn}
             onClick={onClose}
             aria-label="Close dialog"

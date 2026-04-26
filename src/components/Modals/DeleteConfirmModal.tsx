@@ -16,8 +16,8 @@ export function DeleteConfirmModal({ goalName, onConfirm, onClose }: DeleteConfi
           delete all deposit history associated with this goal.
         </p>
         <div className={styles.actions}>
-          <button className={styles.cancelBtn} onClick={onClose}>Cancel</button>
-          <button className={styles.deleteBtn} onClick={onConfirm}>Delete goal</button>
+          <button type="button" className={styles.cancelBtn} onClick={onClose}>Cancel</button>
+          <button type="button" className={styles.deleteBtn} onClick={onConfirm}>Delete goal</button>
         </div>
       </div>
     </ModalBase>

@@ -1,4 +1,5 @@
 .track {
+  display: block;
   width: 100%;
   height: 12px;
   border-radius: 40px;
@@ -11,6 +12,7 @@
 .track.dark   { background-color: var(--neutral-600); }
 
 .fill {
+  display: block;
   height: 100%;
   border-radius: 40px;
   position: relative;
@@ -25,6 +27,7 @@
 
 /* Diagonal segment dividers */
 .segments {
+  display: block;
   position: absolute;
   inset: 0;
   background-image: repeating-linear-gradient(
