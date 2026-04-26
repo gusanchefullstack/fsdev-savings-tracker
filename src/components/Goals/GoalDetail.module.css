@@ -1,0 +1,232 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--neutral-400);
+  font-size: var(--text-preset-5-size);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.backBtn:hover { color: var(--neutral-0); }
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.editBtn {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--neutral-600);
+  border-radius: var(--radius-full);
+  color: var(--neutral-0);
+  font-size: var(--text-preset-6-size);
+  font-weight: 500;
+  background-color: var(--neutral-800);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.editBtn:hover {
+  border-color: var(--neutral-400);
+  background-color: var(--neutral-700);
+}
+
+.deleteBtn {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--red-500);
+  border-radius: var(--radius-full);
+  color: var(--red-500);
+  font-size: var(--text-preset-6-size);
+  font-weight: 500;
+  background-color: transparent;
+  transition: background-color 0.2s;
+}
+
+.deleteBtn:hover { background-color: rgba(239, 68, 68, 0.1); }
+
+.goalName {
+  font-size: var(--text-preset-2-size);
+  font-weight: var(--text-preset-2-weight);
+  line-height: var(--text-preset-2-lh);
+  color: var(--neutral-0);
+}
+
+/* Progress */
+.progressSection,
+.completedSection {
+  background-color: var(--neutral-800);
+  border: 1px solid var(--neutral-600);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.completedLabel {
+  font-size: var(--text-preset-5-size);
+  font-weight: 600;
+  color: var(--green-500);
+}
+
+.percentage {
+  font-family: var(--font-heading);
+  font-size: var(--text-preset-1-size);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.completedStats {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.statLabel {
+  font-size: var(--text-preset-6-size);
+  color: var(--neutral-400);
+}
+
+.statValue {
+  font-size: var(--text-preset-4-size);
+  font-weight: 600;
+  color: var(--green-500);
+}
+
+.amountRow {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.amountItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.amountLabel {
+  font-size: var(--text-preset-6-size);
+  color: var(--neutral-400);
+}
+
+.amountValue {
+  font-size: var(--text-preset-4-size);
+  font-weight: 600;
+  color: var(--neutral-0);
+}
+
+.deadline {
+  font-size: var(--text-preset-6-size);
+  color: var(--neutral-400);
+}
+
+/* Add deposit button */
+.addDepositBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--orange-400);
+  color: var(--neutral-900);
+  border-radius: var(--radius-full);
+  font-size: var(--text-preset-5-size);
+  font-weight: 500;
+  align-self: flex-start;
+  transition: background-color 0.2s;
+}
+
+.addDepositBtn:hover { background-color: var(--orange-500); }
+
+/* Deposit history */
+.historySection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.historyTitle {
+  font-size: var(--text-preset-4-size);
+  font-weight: 600;
+  color: var(--neutral-0);
+}
+
+.noDeposits {
+  color: var(--neutral-400);
+  font-size: var(--text-preset-5-size);
+}
+
+.depositList {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background-color: var(--neutral-600);
+  border: 1px solid var(--neutral-600);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.depositItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--neutral-800);
+}
+
+.depositLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.depositNote {
+  font-size: var(--text-preset-5-size);
+  font-weight: 500;
+  color: var(--neutral-0);
+}
+
+.noNote {
+  color: var(--neutral-500);
+  font-style: italic;
+}
+
+.depositDate {
+  font-size: var(--text-preset-6-size);
+  color: var(--neutral-400);
+}
+
+.depositAmount {
+  font-size: var(--text-preset-5-size);
+  font-weight: 600;
+  color: var(--orange-400);
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .percentage { font-size: var(--text-preset-1-mobile-size); }
+  .amountRow { gap: var(--space-5); }
+}

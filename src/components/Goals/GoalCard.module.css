@@ -1,0 +1,121 @@
+.card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 100%;
+}
+
+.cardBtn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: filter 0.2s ease, transform 0.15s ease;
+  border-radius: var(--radius-lg);
+}
+
+.cardBtn:hover {
+  filter: brightness(1.08);
+}
+
+.cardBtn:active {
+  transform: scale(0.99);
+}
+
+/* ── Variants ── */
+.featured .cardBtn {
+  background: var(--gradient-orange);
+  border: 1px solid var(--color-white-alpha);
+}
+
+.completed .cardBtn {
+  background-color: var(--green-900);
+  border: 1px solid var(--neutral-600);
+}
+
+.default .cardBtn {
+  background-color: var(--neutral-800);
+  border: 1px solid var(--neutral-600);
+}
+
+/* ── Header row ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.name {
+  font-size: var(--text-preset-4-size);
+  font-weight: var(--text-preset-4-weight);
+  line-height: var(--text-preset-4-lh);
+  letter-spacing: var(--text-preset-4-ls);
+  color: var(--neutral-0);
+  flex: 1;
+}
+
+.badge {
+  font-size: var(--text-preset-7-size);
+  font-weight: var(--text-preset-7-weight);
+  line-height: var(--text-preset-7-lh);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--green-500);
+  border: 1px solid var(--green-500);
+  border-radius: var(--radius-full);
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
+/* ── Body ── */
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.percentage {
+  font-family: var(--font-heading);
+  font-size: var(--text-preset-1-size);
+  font-weight: var(--text-preset-1-weight);
+  line-height: var(--text-preset-1-lh);
+  letter-spacing: var(--text-preset-1-ls);
+}
+
+.percentageWhite { color: var(--neutral-0); }
+.percentageOrange { color: var(--orange-400); }
+.percentageGreen { color: var(--green-500); }
+
+/* ── Meta row ── */
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-preset-6-size);
+  font-weight: var(--text-preset-6-weight);
+  line-height: var(--text-preset-6-lh);
+  letter-spacing: var(--text-preset-6-ls);
+  color: var(--neutral-0);
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Responsive: shrink font on mobile ── */
+@media (max-width: 767px) {
+  .percentage {
+    font-size: var(--text-preset-1-mobile-size);
+  }
+}

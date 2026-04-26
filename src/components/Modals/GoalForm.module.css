@@ -1,0 +1,117 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--text-preset-6-size);
+  font-weight: 600;
+  color: var(--neutral-300);
+  letter-spacing: var(--text-preset-6-ls);
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--neutral-500);
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.prefix {
+  position: absolute;
+  left: var(--space-4);
+  color: var(--neutral-400);
+  font-size: var(--text-preset-5-size);
+  pointer-events: none;
+}
+
+.suffix {
+  position: absolute;
+  right: var(--space-4);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--neutral-700);
+  border: 1px solid var(--neutral-600);
+  border-radius: var(--radius-sm);
+  color: var(--neutral-0);
+  font-size: var(--text-preset-5-size);
+  font-weight: 500;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input:focus {
+  border-color: var(--orange-400);
+  outline: none;
+}
+
+.inputPrefixed { padding-left: calc(var(--space-4) + 14px); }
+.inputSuffixed { padding-right: calc(var(--space-4) + 28px); }
+
+.inputError { border-color: var(--red-500); }
+
+.input::placeholder { color: var(--neutral-500); }
+
+/* Date input color fix */
+.input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-preset-6-size);
+  color: var(--red-500);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+  padding-top: var(--space-2);
+}
+
+.cancelBtn {
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid var(--neutral-600);
+  border-radius: var(--radius-full);
+  color: var(--neutral-300);
+  font-size: var(--text-preset-5-size);
+  font-weight: 500;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.cancelBtn:hover {
+  border-color: var(--neutral-400);
+  color: var(--neutral-0);
+}
+
+.saveBtn {
+  padding: var(--space-3) var(--space-5);
+  background-color: var(--orange-400);
+  border-radius: var(--radius-full);
+  color: var(--neutral-900);
+  font-size: var(--text-preset-5-size);
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.saveBtn:hover { background-color: var(--orange-500); }

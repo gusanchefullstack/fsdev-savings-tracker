@@ -1,0 +1,37 @@
+.track {
+  width: 100%;
+  height: 12px;
+  border-radius: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.track.orange { background-color: var(--orange-800); }
+.track.green  { background-color: rgba(74, 222, 128, 0.2); }
+.track.dark   { background-color: var(--neutral-600); }
+
+.fill {
+  height: 100%;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: width 0.4s ease;
+  min-width: 0;
+}
+
+.track.orange .fill { background-color: var(--neutral-0); }
+.track.green  .fill { background-color: var(--green-500); }
+.track.dark   .fill { background-color: var(--orange-400); }
+
+/* Diagonal segment dividers */
+.segments {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    120deg,
+    transparent,
+    transparent 13px,
+    rgba(0, 0, 0, 0.1) 13px,
+    rgba(0, 0, 0, 0.1) 15px
+  );
+}

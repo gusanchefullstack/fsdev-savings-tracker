@@ -1,0 +1,49 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.warning {
+  font-size: var(--text-preset-5-size);
+  line-height: 1.6;
+  color: var(--neutral-300);
+}
+
+.warning strong {
+  color: var(--neutral-0);
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+}
+
+.cancelBtn {
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid var(--neutral-600);
+  border-radius: var(--radius-full);
+  color: var(--neutral-300);
+  font-size: var(--text-preset-5-size);
+  font-weight: 500;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.cancelBtn:hover {
+  border-color: var(--neutral-400);
+  color: var(--neutral-0);
+}
+
+.deleteBtn {
+  padding: var(--space-3) var(--space-5);
+  background-color: var(--red-500);
+  border-radius: var(--radius-full);
+  color: var(--neutral-0);
+  font-size: var(--text-preset-5-size);
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.deleteBtn:hover { opacity: 0.85; }

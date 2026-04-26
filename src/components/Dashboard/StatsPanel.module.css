@@ -1,0 +1,153 @@
+.panel {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+/* Total savings – orange gradient card */
+.totalSavings {
+  background: var(--gradient-orange-stat);
+  border: 1px solid var(--color-white-alpha);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Active goals / Goals completed – dark card */
+.statCard {
+  background-color: var(--neutral-800);
+  border: 1px solid var(--neutral-600);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  overflow: hidden;
+  position: relative;
+  width: 304px;
+  flex-shrink: 0;
+}
+
+.label {
+  font-size: var(--text-preset-5-size);
+  font-weight: 600;
+  line-height: var(--text-preset-5sb-lh);
+  letter-spacing: var(--text-preset-5-ls);
+  color: var(--neutral-0);
+}
+
+.totalValue {
+  font-family: var(--font-heading);
+  font-size: var(--text-preset-1-size);
+  font-weight: var(--text-preset-1-weight);
+  line-height: var(--text-preset-1-lh);
+  letter-spacing: var(--text-preset-1-ls);
+  color: var(--neutral-0);
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: var(--text-preset-1-size);
+  font-weight: var(--text-preset-1-weight);
+  line-height: var(--text-preset-1-lh);
+  letter-spacing: var(--text-preset-1-ls);
+}
+
+.orange { color: var(--orange-400); }
+.green  { color: var(--green-500); }
+
+.decorIcon {
+  position: absolute;
+  bottom: -56px;
+  right: -56px;
+  width: 200px;
+  height: 200px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .panel {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .statCard {
+    width: auto;
+  }
+
+  /* Side-by-side for active/completed on mobile */
+  .statCard:nth-child(2),
+  .statCard:nth-child(3) {
+    display: flex;
+  }
+
+  .panel {
+    grid-template-columns: 1fr;
+  }
+
+  /* Make active goals and completed side by side */
+  .panel .statCard {
+    grid-column: 1;
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .totalSavings {
+    gap: var(--space-6);
+  }
+
+  .statCard {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+
+  .totalValue,
+  .statValue {
+    font-size: var(--text-preset-1-mobile-size);
+  }
+
+  /* Side by side on mobile */
+  .panel > .statCard:nth-child(2),
+  .panel > .statCard:nth-child(3) {
+    flex: 1;
+  }
+
+  .panel::after {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .statContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .panel {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .statCard { width: auto; }
+  .totalValue, .statValue { font-size: 48px; }
+}

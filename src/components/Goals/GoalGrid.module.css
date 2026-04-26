@@ -1,0 +1,112 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+/* ── Featured row: large card (65%) + tall card (35%) ── */
+.featuredRow {
+  display: grid;
+  grid-template-columns: 1fr 418px;
+  gap: var(--space-6);
+  min-height: 504px;
+}
+
+.featuredCard {
+  display: grid;
+  grid-template-rows: 240px 1fr;
+  gap: var(--space-6);
+}
+
+/* The featured card spans full width of its column */
+.featuredCard > :first-child {
+  grid-row: 1 / 2;
+}
+
+/* Remaining slot in featured column stays empty or filled by grid auto */
+.tallCard {
+  min-height: 504px;
+}
+
+/* ── Subsequent rows ── */
+.row {
+  display: grid;
+  grid-template-columns: 418px 1fr;
+  gap: var(--space-6);
+  min-height: 504px;
+}
+
+.rowReverse {
+  grid-template-columns: 1fr 418px;
+}
+
+.rowReverse .tallCard { order: 2; }
+.rowReverse .wideBlock { order: 1; }
+
+.wideBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.wideCard { flex: 1; }
+
+.halfRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  flex: 1;
+}
+
+.halfCard { min-height: 0; }
+
+/* ── Tablet (768px) ── */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .featuredRow {
+    grid-template-columns: 1fr 1fr;
+    min-height: auto;
+  }
+
+  .featuredCard {
+    grid-template-rows: auto;
+  }
+
+  .row,
+  .rowReverse {
+    grid-template-columns: 1fr 1fr;
+    min-height: auto;
+  }
+
+  .rowReverse .tallCard { order: unset; }
+  .rowReverse .wideBlock { order: unset; }
+
+  .tallCard { min-height: 240px; }
+
+  .halfRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Mobile (< 768px) ── */
+@media (max-width: 767px) {
+  .featuredRow,
+  .row,
+  .rowReverse {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .featuredCard {
+    grid-template-rows: auto;
+  }
+
+  .tallCard { min-height: 200px; }
+
+  .halfRow {
+    grid-template-columns: 1fr;
+  }
+
+  .rowReverse .tallCard { order: unset; }
+  .rowReverse .wideBlock { order: unset; }
+}

@@ -1,0 +1,31 @@
+.container {
+  background-color: var(--neutral-800);
+  border: 1px solid var(--neutral-600);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  width: 100%;
+}
+
+.title {
+  font-size: var(--text-preset-5-size);
+  font-weight: 600;
+  line-height: var(--text-preset-5sb-lh);
+  letter-spacing: var(--text-preset-5-ls);
+  color: var(--neutral-0);
+  margin-bottom: var(--space-5);
+}
+
+.chartWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tooltip {
+  background-color: var(--neutral-700);
+  border: 1px solid var(--neutral-600);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  color: var(--neutral-0);
+}
